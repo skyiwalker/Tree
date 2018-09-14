@@ -1,5 +1,5 @@
 # Tree
-The Left-Child/Right-Sibling Implementation of a Tree
+The Left-Child/Right-Sibling Implementation
 
 <img src = "https://i.imgur.com/8eNZXMG.png" alt="The Left-Child/Right-Sibling Implementation" width="300">
 
