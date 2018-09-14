@@ -17,3 +17,6 @@ The Left-Child/Right-Sibling Implementation
 - [ ] Profundidade
 - [ ] Iterar até a raiz
 - [ ] BSF/DSF
+
+
+####[REFERENCIAS](https://www.ida.liu.se/opendsa/OpenDSA/Books/Everything/html/GenTreeImplement.html#the-left-child-right-sibling-implementation)
