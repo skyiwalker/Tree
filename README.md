@@ -5,7 +5,7 @@ The Left-Child/Right-Sibling Implementation
 
 ### Operações da Árvore:
 
-- [ ] Adicionar
+- [x] Adicionar
 - [ ] Remover
 - [ ] Busca
 - [ ] Altura da Árvore
