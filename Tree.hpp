@@ -52,6 +52,20 @@ class Tree
 				irmao_direito->addirmao(irmao);
 			}
 		}
+		void print()
+		{
+			cout << valor << " ";
+			if (irmao_direito != nullptr)
+			{
+				irmao_direito->print();
+			}
+
+			if (filho_esquerdo != nullptr)
+			{
+				filho_esquerdo->print();
+			}
+
+		}
 
 	};	
 	vector<No> arvore;
@@ -79,5 +93,15 @@ class Tree
 			arvore[posicao_pai-1].addfilho(&arvore[arvore.size()-1]);
 		}
 
+	}
+	void print()
+	{
+		for (int i = 0; i < arvore.size(); i++)
+		{
+			if (arvore[i].pai == nullptr)
+			{
+				arvore[i].print();
+			}
+		} 
 	}
 };
