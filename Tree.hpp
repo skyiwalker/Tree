@@ -3,52 +3,56 @@
 using namespace std;
 
 template <typename T>
+struct no
+{
+	T valor;
+	no<T> *pai;
+	no<T> *filho_esquerdo;
+	no<T> *irmao_direito;
+	
+	no(T valor, no<T> *pai)
+	{
+		this->valor = valor;
+		this->pai = pai;
+		filho_esquerdo = nullptr;
+		irmao_direito = nullptr;
+	}
+	void addirmao(no<T> *irmao)
+	{
+		if (irmao_direito == nullptr)
+		{
+			irmao_direito = irmao;
+		}
+		else
+		{
+			irmao_direito.addirmao(irmao);
+		}
+	}
+	void addfilho(no<T> *filho)
+	{
+		if (filho_esquerdo == nullptr)
+		{
+			filho_esquerdo = filho;
+		}
+		else
+		{
+			filho_esquerdo.addirmao(filho);
+		}
+	}		
+};
+template <typename T>
 class Tree
 {
 	private:
-	struct no
-	{
-		T valor;
-		int pai;
-		int filho_esquerdo;
-		int irmao_direito;
-		
-		no(T valor, int pai)
-		{
-			this->valor = valor;
-			this->pai = pai;
-			filho_esquerdo = -1;
-			irmao_direito = -1;
-		}
-		
-		
-	};
-	
-	vector<no> arvore;
+	vector< no <T> > arvore;
 	
 	public:
 	Tree() = default;
-	void add(T valor, int pai = -1)
-	{
-		if (pai > arvore.size())
-		{
-			return;
-		}
-		
-		arvore.push_back(no(valor, pai));
-		arvore[pai-1].addfilho(arvore.size());
-	}
 	
-	void print()
+	void add(const T valor, no<T> *pai = NULL)
 	{
-		for (int i = 0; i<arvore.size(); i++)
-		{
-			if (arvore[i].pai == -1)
-			{
-				cout << arvore[i].valor;
-				
-			}
-		}	
+		arvore.push_back(no<T>(valor, pai));
+		no<T> *temp = arvore[arvore.size()-1];
+		pai.addfilho(temp); 
 	}
-	
 };
