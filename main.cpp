@@ -10,5 +10,6 @@ int main()
 	arvore.add(2, 1);
 	arvore.add(1, 2);
 	arvore.print();
+	cout << "profundidade de 1: " << arvore.profundidade(4);
 	return 0;
 }

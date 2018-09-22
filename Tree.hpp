@@ -45,7 +45,7 @@ class Tree
 				filho_esquerdo->addirmao(filho);
 			}
 		}
-		
+
 		void print()
 		{
 			cout << " " << valor;
@@ -60,10 +60,11 @@ class Tree
 		}
 	};
 	vector<no*> arvore;
+
 	public:
 	Tree() = default;
 	
-	void add(const T valor, int pai = 0)
+	void add(const T valor, const int pai = 0)
 	{
 		if (pai == 0)
 		{
@@ -79,6 +80,20 @@ class Tree
 		}
 	}
 
+	unsigned profundidade(const int posicao_no)
+	{
+		if (posicao_no <= arvore.size())
+		{
+			int profundidade_no = 0;
+			no *temp = arvore[posicao_no-1]->pai;
+			while(temp)
+			{
+				profundidade_no++;
+				temp = temp->pai;
+			}
+			return profundidade_no;
+		}
+	}
 	void print()
 	{
 		for (int i = 0; i < arvore.size(); i++)
