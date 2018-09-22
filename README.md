@@ -8,7 +8,7 @@ The Left-Child/Right-Sibling Implementation
 - [x] Adicionar
 - [ ] Remover
 - [ ] Busca
-- [ ] Altura da Árvore
+- [x] Altura da Árvore
 - [x] Acessar raiz
 
 ### Operações dos nó's:
