@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 template <typename T>
@@ -93,6 +94,18 @@ class Tree
 			}
 			return profundidade_no;
 		}
+	}
+	unsigned altura()
+	{
+		int max = 0; 
+		for (int i = 1; i <= arvore.size(); i++)
+		{
+			if (profundidade(i) > max)
+			{
+				max = profundidade(i);
+			}
+		}
+		return max;
 	}
 	void print()
 	{
