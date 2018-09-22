@@ -5,17 +5,17 @@ The Left-Child/Right-Sibling Implementation
 
 ### Operações da Árvore:
 
-- [ ] Adicionar
+- [x] Adicionar
 - [ ] Remover
 - [ ] Busca
-- [ ] Altura da Árvore
-- [ ] Acessar raiz
+- [x] Altura da Árvore
+- [x] Acessar raiz
 
 ### Operações dos nó's:
 
-- [ ] Pai
-- [ ] Profundidade
-- [ ] Iterar até a raiz
+- [x] Pai
+- [x] Profundidade
+- [x] Iterar até a raiz
 - [ ] BSF/DSF
 
 
