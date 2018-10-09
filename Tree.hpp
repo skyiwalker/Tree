@@ -3,6 +3,8 @@
 #include <algorithm>
 using namespace std;
 
+int pos_raiz;
+
 template <typename T>
 class Tree
 {
@@ -161,12 +163,14 @@ class Tree
 			if (!arvore[posicao-1]->filho_esquerdo)
 			{
 				arvore.erase(arvore.begin() + posicao-1);
+				pos_raiz = NULL;
 			}
 			else
 			{
 				no * temp = arvore[posicao-1]->filho_esquerdo;
 				arvore.erase(arvore.begin() + posicao-1);
 				temp->pai = nullptr;
+				pos_raiz = posicao-1;
 				if (temp->irmao_direito)
 				{
 					temp->irmao_direito->addpai(temp);
