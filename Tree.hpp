@@ -3,12 +3,14 @@
 #include <algorithm>
 using namespace std;
 
-int pos_raiz;
+
 
 template <typename T>
 class Tree
 {
+	
 	private:
+	int pos_raiz = -1;
 	struct no
 	{
 		public:
@@ -119,11 +121,6 @@ class Tree
 			}
 		}
 
-		bool isroot()
-		{
-			return pai == nullptr;
-		}
-
 		bool isleaf()
 		{
 			return filho_esquerdo == nullptr;
@@ -134,6 +131,14 @@ class Tree
 	public:
 	Tree() = default;
 	
+	int getPos_raiz(){
+		return pos_raiz;
+	}
+
+	void setPos_raiz(int new_pos){
+		pos_raiz = new_pos;
+	}
+
 	void add(const T valor, const int pai = 0)
 	{
 		if (pai == 0)
@@ -158,19 +163,20 @@ class Tree
 		}
 
 		// caso seja raiz
-		if (arvore[posicao-1]->isroot())
+		if (posicao-1 == getPos_raiz())
 		{
 			if (!arvore[posicao-1]->filho_esquerdo)
 			{
 				arvore.erase(arvore.begin() + posicao-1);
-				pos_raiz = NULL;
+				//Quando não existe raiz, a variável armazena -1.
+				setPos_raiz(-1);
 			}
 			else
 			{
 				no * temp = arvore[posicao-1]->filho_esquerdo;
 				arvore.erase(arvore.begin() + posicao-1);
 				temp->pai = nullptr;
-				pos_raiz = posicao-1;
+				setPos_raiz(posicao-1);
 				if (temp->irmao_direito)
 				{
 					temp->irmao_direito->addpai(temp);
