@@ -23,6 +23,7 @@ int main()
 	cout << "testando exclusão " << endl;
 
 	arvore.remove(3);
+	arvore.add_por_valor(10,6);
 	arvore.print();
 	return 0;
 }

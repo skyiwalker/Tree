@@ -155,6 +155,23 @@ class Tree
 		}
 	}
 
+	int busca_vetor(const T chave){
+		for(int pos = 0; pos < arvore.size(); pos++){
+			if(arvore[pos]->valor == chave){
+				return pos;
+			}
+		}
+		return -1;
+	}
+
+	void add_por_valor(const T valor, const T chave_busca)
+	{
+		int pos = busca_vetor(chave_busca);
+		if(pos != -1){
+			add(valor, pos);
+		}
+	}
+
 	void remove(const int posicao)
 	{
 		if (posicao > int(arvore.size()))
