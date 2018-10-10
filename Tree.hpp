@@ -3,8 +3,6 @@
 #include <algorithm>
 using namespace std;
 
-
-
 template <typename T>
 class Tree
 {
@@ -295,32 +293,24 @@ class Tree
 
 	bool busca_profundidade(const T chave)
 	{
-		for (int i = 0; i < int(arvore.size()); i++)
+		bool busca = arvore[pos_raiz]->busca_profundidade(chave);
+		if (busca)
 		{
-			if (arvore[i]->pai == nullptr)
-			{
-				bool busca = arvore[i]->busca_profundidade(chave);
-				if (busca)
-				{
-					return true;
-				}
-			}
+			return true;
 		}
 		return false;
 	}
 
 	bool busca_largura(const T chave)
 	{
-		for (int i = 0; i < int(arvore.size()); i++)
+		if (int(arvore.size()) == 0)
 		{
-			if (arvore[i]->pai == nullptr)
-			{
-				bool busca = arvore[i]->busca_profundidade(chave);
-				if (busca)
-				{
-					return true;
-				}
-			}
+			return false	
+		}	
+		bool busca = arvore[pos_raiz]->busca_largura(chave);
+		if (busca)
+		{
+			return true;
 		}
 		return false;
 	}
