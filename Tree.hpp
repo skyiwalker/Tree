@@ -91,17 +91,17 @@ class Tree
 			}
 			if (irmao_direito == nullptr && filho_esquerdo)
 			{
-				return filho_esquerdo->busca_largura();
+				return filho_esquerdo->busca_largura(chave);
 			}
 
 			if (filho_esquerdo == nullptr && irmao_direito)
 			{
-				return irmao_direito->busca_largura();
+				return irmao_direito->busca_largura(chave);
 			}
 
 			if (irmao_direito && filho_esquerdo)
 			{
-				return irmao_direito->busca_largura() || filho_esquerdo->busca_largura();
+				return irmao_direito->busca_largura(chave) || filho_esquerdo->busca_largura(chave);
 			}
 			return false;
 		}
@@ -170,11 +170,11 @@ class Tree
 		}
 	}
 
-	void remove_por_valor(const T valor, const T chave_busca)
+	void remove_por_valor(const T chave_busca)
 	{
 		int pos = busca_vetor(chave_busca);
 		if(pos != -1){
-			remove(valor, pos);
+			remove(pos);
 		}
 	}
 
@@ -199,7 +199,8 @@ class Tree
 				no * temp = arvore[posicao-1]->filho_esquerdo;
 				arvore.erase(arvore.begin() + posicao-1);
 				temp->pai = nullptr;
-				setPos_raiz(posicao-1);
+				int new_pos = busca_vetor(temp->valor);
+				setPos_raiz(new_pos);
 				if (temp->irmao_direito)
 				{
 					temp->irmao_direito->addpai(temp);
@@ -270,7 +271,7 @@ class Tree
 			profundidade_no++;
 			temp = temp->pai;
 		}
-		return profundidade_no;
+		return profundidade_no+1;
 	}
 
 	unsigned altura()
@@ -305,7 +306,7 @@ class Tree
 	{
 		if (int(arvore.size()) == 0)
 		{
-			return false	
+			return false;	
 		}	
 		bool busca = arvore[pos_raiz]->busca_largura(chave);
 		if (busca)
