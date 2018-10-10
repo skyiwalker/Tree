@@ -24,6 +24,10 @@ int main()
 
 	arvore.remove(3);
 	arvore.add_por_valor(10,6);
+	arvore.add_por_valor(11,6);
+	arvore.add_por_valor(12,11);
+	arvore.add_por_valor(13,12);
+	cout << " altura arvore " << arvore.altura() << endl;
 	arvore.print();
 	return 0;
 }

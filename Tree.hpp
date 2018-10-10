@@ -10,7 +10,7 @@ class Tree
 {
 	
 	private:
-	int pos_raiz = -1;
+	int pos_raiz = 0;
 	struct no
 	{
 		public:
@@ -172,6 +172,14 @@ class Tree
 		}
 	}
 
+	void remove_por_valor(const T valor, const T chave_busca)
+	{
+		int pos = busca_vetor(chave_busca);
+		if(pos != -1){
+			remove(valor, pos);
+		}
+	}
+
 	void remove(const int posicao)
 	{
 		if (posicao > int(arvore.size()))
@@ -282,13 +290,7 @@ class Tree
 
 	void print()
 	{
-		for (int i = 0; i < int(arvore.size()); i++)
-		{
-			if (arvore[i]->pai == nullptr)
-			{
-				arvore[i]->print();
-			}
-		}
+		arvore[pos_raiz]->print();
 	}
 
 	bool busca_profundidade(const T chave)
