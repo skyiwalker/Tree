@@ -6,6 +6,7 @@ The Left-Child/Right-Sibling Implementation
 ### Operações da Árvore:
 
 - [x] Adicionar
+<<<<<<< HEAD
 - [x] Remover
 - [x] Busca
 - [x] Altura da Árvore
@@ -17,6 +18,19 @@ The Left-Child/Right-Sibling Implementation
 - [x] Profundidade
 - [x] Iterar até a raiz
 - [x] BSF/DSF
+=======
+- [ ] Remover
+- [ ] Busca
+- [ ] Altura da Árvore
+- [ ] Acessar raiz
+
+### Operações dos nó's:
+
+- [ ] Pai
+- [ ] Profundidade
+- [ ] Iterar até a raiz
+- [ ] BSF/DSF
+>>>>>>> master
 
 
 ##### [REFERENCIAS](https://www.ida.liu.se/opendsa/OpenDSA/Books/Everything/html/GenTreeImplement.html#the-left-child-right-sibling-implementation)
